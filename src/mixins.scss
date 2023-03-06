@@ -1,0 +1,41 @@
+// mixin is a feature of scss for using repetative style
+// if any style using repetaly make a mixin ans use in any compoenent
+
+@mixin sm {
+  // 640 ya 640px se upr
+  @media only screen and (min-width: 640px) {
+    @content;
+  }
+}
+
+@mixin md {
+  @media only screen and (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin lg {
+  @media only screen and (min-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin xl {
+  @media only screen and (min-width: 1280px) {
+    @content;
+  }
+}
+
+@mixin xxl {
+  @media only screen and (min-width: 1536px) {
+    @content;
+  }
+}
+
+@mixin ellipse($line: 2) {
+  display: -webkit-box;
+  -webkit-line-clamp: $line;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

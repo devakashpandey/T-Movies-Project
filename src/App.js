@@ -22,9 +22,9 @@ function App() {
   const fetchApiConfig = () => {
     fetchDataFromApi("/configuration").then((res) => {
       const url = {
-        backdrop: res.images.secure_base_url + "orignal", // all type of picture size
-        poster: res.images.secure_base_url + "orignal",
-        profile: res.images.secure_base_url + "orignal",
+        backdrop: res.images.secure_base_url + "original", // all type of picture size
+        poster: res.images.secure_base_url + "original",
+        profile: res.images.secure_base_url + "original",
       };
       dispatch(getApiConfiguration(url));
     });
