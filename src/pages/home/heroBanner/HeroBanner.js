@@ -20,8 +20,6 @@ const HeroBanner = () => {
       url.backdrop +
       data?.results?.[Math.floor(Math.random() * 20)]?.backdrop_path;
     setBgBanner(bgImg);
-
-    console.log(bgImg);
   }, [data]);
 
   const searchHandler = (e) => {
