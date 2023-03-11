@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import useFetch from "../../../hooks/useFetch";
 import { useSelector } from "react-redux";
 import Img from "../../../components/lazyLoadImg/Img";
-import ContentWrapper from "../../../components/contentWrapper/ContentWrapper"; // fro centering the all content
+import ContentWrapper from "../../../components/contentWrapper/ContentWrapper"; // for centering the all content
 
 const HeroBanner = () => {
   const [bgBanner, setBgBanner] = useState("");
