@@ -4,17 +4,18 @@ import { useNavigate } from "react-router-dom";
 import useFetch from "../../../hooks/useFetch";
 import { useSelector } from "react-redux";
 import Img from "../../../components/lazyLoadImg/Img";
-import ContentWrapper from "../../../components/contentWrapper/ContentWrapper"; // fro centering the all content
+import ContentWrapper from "../../../components/contentWrapper/ContentWrapper"; // for centering the all content
 
 const HeroBanner = () => {
   const [bgBanner, setBgBanner] = useState("");
   const [query, setQuery] = useState("");
 
   const navigate = useNavigate();
-  const { url } = useSelector((state) => state.home);
+  const { url } = useSelector((state) => state.home);  // getting the data from redux
 
   const { data, loading } = useFetch("/movie/upcoming");
 
+  // for loading a random background image
   useEffect(() => {
     const bgImg =
       url.backdrop +
@@ -22,6 +23,7 @@ const HeroBanner = () => {
     setBgBanner(bgImg);
   }, [data]);
 
+  // this is for if when you press "enter" key and the search length is greater than 0 then it send to the search page
   const searchHandler = (e) => {
     if (e.key === "Enter" && query.length > 0) {
       navigate(`/search/${query}`);
@@ -36,7 +38,8 @@ const HeroBanner = () => {
           </div>
         )}
 
-        <div className="opacity-layer"></div>
+         // this is for dividing the banner and home
+          <div className="opacity-layer"></div>  
 
         <ContentWrapper>
           <div className="banner-content">

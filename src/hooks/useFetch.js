@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { fetchDataFromApi } from "../config/api";
-// custom hook
+
+// custom hook for fetching api, handle loading & error
+
 const useFetch = (url) => {
   const [data, setData] = useState("");
   const [loading, setLoading] = useState("");
