@@ -1,5 +1,4 @@
 import React from "react";
-import "./Home.scss";
 import HeroBanner from "./heroBanner/HeroBanner";
 
 const Home = () => {

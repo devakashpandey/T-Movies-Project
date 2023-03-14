@@ -11,7 +11,7 @@ const HeroBanner = () => {
   const [query, setQuery] = useState("");
 
   const navigate = useNavigate();
-  const { url } = useSelector((state) => state.home);  // getting the data from redux
+  const { url } = useSelector((state) => state.home); // getting the data from redux
 
   const { data, loading } = useFetch("/movie/upcoming");
 
@@ -38,8 +38,8 @@ const HeroBanner = () => {
           </div>
         )}
 
-         // this is for dividing the banner and home
-          <div className="opacity-layer"></div>  
+        {/* this is for dividing the banner and home */}
+        <div className="opacity-layer"></div>
 
         <ContentWrapper>
           <div className="banner-content">
