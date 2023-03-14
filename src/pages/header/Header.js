@@ -18,6 +18,15 @@ const Header = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
+  const controlNavbar = () => {};
+
+  useEffect(() => {
+    window.addEventListener("scroll", controlNavbar);
+    return () => {
+      window.removeEventListener("scroll", controlNavbar);
+    };
+  }, [lastScrollY]);
+
   const openSearch = () => {
     setMobileMenu(false);
     setShowSearch(true);
@@ -37,6 +46,15 @@ const Header = () => {
     }
   };
 
+  const navigationHandler = (type) => {
+    if (type === "movie") {
+      navigate(`/explore/movie`);
+    } else {
+      navigate(`/explore/tv`);
+    }
+    setMobileMenu(false);
+  };
+
   return (
     <header className={`header ${mobileMenu ? "mobile-view" : ""}  ${show}`}>
       <ContentWrapper className="content-wrapper">
@@ -45,10 +63,14 @@ const Header = () => {
           <span className="logo-title">Movix Hub</span>
         </div>
         <ul className="menu-items">
-          <li className="menu-item">Movies</li>
-          <li className="menu-item">TV Shows</li>
+          <li className="menu-item" onClick={() => navigationHandler("movie")}>
+            Movies
+          </li>
+          <li className="menu-item" onClick={() => navigationHandler("tv")}>
+            TV Shows
+          </li>
           <li className="menu-item search-icon">
-            <HiOutlineSearch />
+            <HiOutlineSearch onClick={openSearch} />
           </li>
         </ul>
         <div className="mobile-Menu-Items">
