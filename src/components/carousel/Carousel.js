@@ -6,7 +6,7 @@ import {
 } from "react-icons/bs";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
-import dayjs from "dayjs";
+import dayjs from "dayjs"; // formating the date
 import ContentWrapper from "../contentWrapper/ContentWrapper";
 import Img from "../lazyLoadImg/Img";
 import PosterImg from "../../assets/no-poster.png";
@@ -30,26 +30,6 @@ const Carousel = ({ data, loading }) => {
             className="right-arrow arrow"
             onClick={() => navigation("right")}
           />
-          {!loading ? (
-            <div className="carousel-items">
-              {data?.map((item) => {
-                {
-                  /* const posterUrl = item.poster_path
-                  ? url.poster + item.poster_path
-                  : PosterImg; */
-                }
-                return (
-                  <div className="caraousel-item" key={item.id}>
-                    <div className="poster-block">
-                      <Img />
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
-          ) : (
-            <span>Loding</span>
-          )}
         </ContentWrapper>
       </div>
     </>
