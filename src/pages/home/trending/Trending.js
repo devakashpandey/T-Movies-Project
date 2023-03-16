@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "../Style.scss";
+import "./Trending.scss";
 import ContentWrapper from "../../../components/contentWrapper/ContentWrapper";
 import SwitchTabs from "../../../components/switchTabs/SwitchTabs";
 import useFetch from "../../../hooks/useFetch";

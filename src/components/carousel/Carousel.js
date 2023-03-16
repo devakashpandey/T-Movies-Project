@@ -30,6 +30,19 @@ const Carousel = ({ data, loading }) => {
             className="right-arrow arrow"
             onClick={() => navigation("right")}
           />
+          {!loading ? (
+            <div className="carousel-items">
+              {data?.map((item) => {
+                return (
+                  <div className="carousel-item" key={item.id}>
+                    <Img src={null} />
+                  </div>
+                );
+              })}
+            </div>
+          ) : (
+            <span>Loading...</span>
+          )}
         </ContentWrapper>
       </div>
     </>

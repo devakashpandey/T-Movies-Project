@@ -1,0 +1,55 @@
+@import "../../mixins.scss";
+.carousel {
+  margin-bottom: 50px;
+  .content-wrapper {
+    position: relative;
+  }
+  .arrow {
+    font-size: 30px;
+    color: black;
+    position: absolute;
+    top: 44%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    opacity: 0.5;
+    z-index: 1;
+    display: none;
+    @include md {
+      display: block;
+    }
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+  .left-arrow {
+    left: 30px;
+  }
+  .right-arrow {
+    right: 30px;
+  }
+
+  .carouselItems {
+    display: flex;
+    gap: 10px;
+    overflow-y: hidden;
+    margin-right: -20px;
+    margin-left: -20px;
+    padding: 0 20px;
+    @include md {
+      gap: 20px;
+      overflow: hidden;
+      margin: 0;
+      padding: 0;
+    }
+    .carouselItem {
+      width: 125px;
+      cursor: pointer;
+      @include md {
+        width: calc(25% - 15px);
+      }
+      @include lg {
+        width: calc(20% - 16px);
+      }
+    }
+  }
+}
