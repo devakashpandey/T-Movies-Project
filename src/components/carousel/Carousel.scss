@@ -28,7 +28,7 @@
     right: 30px;
   }
 
-  .carouselItems {
+  .carousel-items {
     display: flex;
     gap: 10px;
     overflow-y: hidden;
@@ -41,7 +41,7 @@
       margin: 0;
       padding: 0;
     }
-    .carouselItem {
+    .carousel-item {
       width: 125px;
       cursor: pointer;
       @include md {
@@ -49,6 +49,37 @@
       }
       @include lg {
         width: calc(20% - 16px);
+      }
+      flex-shrink: 0; // prevent the shrinking of images
+      .posters {
+        position: relative;
+        width: 100%;
+        aspect-ratio: 1 / 1.5;
+        background-size: cover;
+        background-position: center;
+        margin-bottom: 30px;
+        margin-top: 10px;
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        padding: 10px;
+
+        // styling of lazing loading image
+        .lazy-load-image-background {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          border-radius: 12px;
+          overflow: hidden;
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+          }
+        }
       }
     }
   }

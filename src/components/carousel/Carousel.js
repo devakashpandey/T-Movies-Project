@@ -33,9 +33,14 @@ const Carousel = ({ data, loading }) => {
           {!loading ? (
             <div className="carousel-items">
               {data?.map((item) => {
+                const posterURL = item.poster_path
+                  ? url.poster + item.poster_path
+                  : PosterImg;
                 return (
                   <div className="carousel-item" key={item.id}>
-                    <Img src={null} />
+                    <div className="posters">
+                      <Img src={posterURL} />
+                    </div>
                   </div>
                 );
               })}
