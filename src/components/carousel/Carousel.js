@@ -10,6 +10,7 @@ import dayjs from "dayjs"; // formating the date
 import ContentWrapper from "../contentWrapper/ContentWrapper";
 import Img from "../lazyLoadImg/Img";
 import PosterImg from "../../assets/no-poster.png";
+import CircleRating from "../rating/CircleRating";
 
 const Carousel = ({ data, loading }) => {
   const carouselSelector = useRef(); // we can select any element by their refrences through this hook
@@ -52,6 +53,7 @@ const Carousel = ({ data, loading }) => {
                   <div className="carousel-item" key={item.id}>
                     <div className="posters">
                       <Img src={posterURL} />
+                      <CircleRating rating={item.vote_average.toFixed(1)} />
                     </div>
                     <div className="details">
                       <span className="title">{item.title || item.name}</span>
