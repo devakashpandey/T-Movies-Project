@@ -18,6 +18,18 @@ const Carousel = ({ data, loading }) => {
 
   const navigation = (direction) => {};
 
+  const skeletonFunc = () => {
+    return (
+      <div className="skeleton-item">
+        <div className="posters skeleton"></div>
+        <div className="details">
+          <div className="title skeleton"></div>
+          <div className="date skeleton"></div>
+        </div>
+      </div>
+    );
+  };
+
   return (
     <>
       <div className="carousel">
@@ -41,12 +53,24 @@ const Carousel = ({ data, loading }) => {
                     <div className="posters">
                       <Img src={posterURL} />
                     </div>
+                    <div className="details">
+                      <span className="title">{item.title || item.name}</span>
+                      <span className="date">
+                        {dayjs(item.release_date).format("MMM D, YYYY")}
+                      </span>
+                    </div>
                   </div>
                 );
               })}
             </div>
           ) : (
-            <span>Loading...</span>
+            <div className="loding-skeleton">
+              {skeletonFunc()}
+              {skeletonFunc()}
+              {skeletonFunc()}
+              {skeletonFunc()}
+              {skeletonFunc()}
+            </div>
           )}
         </ContentWrapper>
       </div>
