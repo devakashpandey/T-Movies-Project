@@ -18,18 +18,20 @@ const Carousel = ({ data, loading }) => {
   const { url } = useSelector((state) => state.home);
 
   const navigation = (direction) => {
-    const container = carouselSelector.current;
+    const container = carouselSelector.current; // first we store the carousel container refrence in container variable
     const scrollAmount =
       direction === "left"
         ? container.scrollLeft - (container.offsetWidth + 20)
         : container.scrollLeft + (container.offsetWidth + 20);
 
+    // a javascript method
     container.scrollTo({
       left: scrollAmount,
       behavior: "smooth",
     });
   };
 
+  // this is skeleton loding function
   const skeletonFunc = () => {
     return (
       <div className="skeleton-item">
@@ -61,7 +63,11 @@ const Carousel = ({ data, loading }) => {
                   ? url.poster + item.poster_path
                   : PosterImg;
                 return (
-                  <div className="carousel-item" key={item.id}>
+                  <div
+                    className="carousel-item"
+                    key={item.id}
+                    onClick={() => navigate(`/${item.media_type}/${item.id}`)}
+                  >
                     <div className="posters">
                       <Img src={posterURL} />
                       <CircleRating rating={item.vote_average.toFixed(1)} />
