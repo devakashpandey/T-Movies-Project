@@ -17,7 +17,18 @@ const Carousel = ({ data, loading }) => {
   const navigate = useNavigate();
   const { url } = useSelector((state) => state.home);
 
-  const navigation = (direction) => {};
+  const navigation = (direction) => {
+    const container = carouselSelector.current;
+    const scrollAmount =
+      direction === "left"
+        ? container.scrollLeft - (container.offsetWidth + 20)
+        : container.scrollLeft + (container.offsetWidth + 20);
+
+    container.scrollTo({
+      left: scrollAmount,
+      behavior: "smooth",
+    });
+  };
 
   const skeletonFunc = () => {
     return (
@@ -44,7 +55,7 @@ const Carousel = ({ data, loading }) => {
             onClick={() => navigation("right")}
           />
           {!loading ? (
-            <div className="carousel-items">
+            <div className="carousel-items" ref={carouselSelector}>
               {data?.map((item) => {
                 const posterURL = item.poster_path
                   ? url.poster + item.poster_path
