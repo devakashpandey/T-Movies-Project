@@ -1,11 +1,7 @@
 import React from "react";
 import "./Footer.scss";
-import {
-  FaFacebookF,
-  FaInstagram,
-  FaTwitter,
-  FaLinkedin,
-} from "react-icons/fa";
+import { FaInstagram, FaTwitter, FaLinkedin } from "react-icons/fa";
+import { FiMail } from "react-icons/fi";
 
 import ContentWrapper from "../../components/contentWrapper/ContentWrapper"; // fro centering the all content
 
@@ -13,31 +9,46 @@ const Footer = () => {
   return (
     <footer className="footer">
       <ContentWrapper>
-        <ul className="menuItems">
-          <li className="menuItem">Terms Of Use</li>
-          <li className="menuItem">Privacy-Policy</li>
-          <li className="menuItem">About</li>
-          <li className="menuItem">Blog</li>
-          <li className="menuItem">FAQ</li>
+        <ul className="menu-items">
+          <li className="menu-item">Terms Of Use</li>
+          <li className="menu-item">Privacy-Policy</li>
+          <li className="menu-item">About</li>
+          <li className="menu-item">Blog</li>
+          <li className="menu-item">FAQ</li>
         </ul>
-        <div className="infoText">
+        <div className="info-text">
           Here you explore millions of Movies, TV shows & more. Here you have
           two sections Movies & Tv shows you can also search for the movies or
-          shows which you want. Explore & Enjoy
+          shows which you want. The best thing get here is trending option with
+          Day & Week. Explore & Enjoy
         </div>
 
-        <div className="socialIcons">
+        <div className="social-icons">
           <span className="icon">
-            <FaFacebookF />
+            <a href="mailto:developerakky@gmail,com" target="_mail">
+              <FiMail />
+            </a>
           </span>
           <span className="icon">
-            <FaInstagram />
+            <a
+              href="https://www.instagram.com/codingwithakash"
+              target="_instagram"
+            >
+              <FaInstagram />
+            </a>
           </span>
           <span className="icon">
-            <FaTwitter />
+            <a href="https://www.twitter.com/devakky04" target="_twitter">
+              <FaTwitter />
+            </a>
           </span>
           <span className="icon">
-            <FaLinkedin />
+            <a
+              href="https://www.linkedin.com/in/devakashpandey/"
+              target="_linkedin"
+            >
+              <FaLinkedin />
+            </a>
           </span>
         </div>
         <div className="copyright">
