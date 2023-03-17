@@ -12,7 +12,7 @@ import Img from "../lazyLoadImg/Img";
 import PosterImg from "../../assets/no-poster.png";
 import CircleRating from "../rating/CircleRating";
 
-const Carousel = ({ data, loading }) => {
+const Carousel = ({ data, loading, endpoint }) => {
   const carouselSelector = useRef(); // we can select any element by their refrences through this hook
   const navigate = useNavigate();
   const { url } = useSelector((state) => state.home);
@@ -66,7 +66,9 @@ const Carousel = ({ data, loading }) => {
                   <div
                     className="carousel-item"
                     key={item.id}
-                    onClick={() => navigate(`/${item.media_type}/${item.id}`)}
+                    onClick={() =>
+                      navigate(`/${item.media_type || endpoint}/${item.id}`)
+                    }
                   >
                     <div className="posters">
                       <Img src={posterURL} />
