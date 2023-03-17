@@ -135,15 +135,6 @@
             height: 50px;
           }
         }
-        .genres {
-          display: none;
-          position: relative;
-          @include md {
-            display: flex;
-            flex-flow: wrap;
-            justify-content: flex-end;
-          }
-        }
       }
       .details {
         color: white;
