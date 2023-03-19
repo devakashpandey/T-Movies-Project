@@ -13,6 +13,8 @@ const DetailsBanner = ({ video, crew }) => {
   const { mediaType, id } = useParams();
   const { data, loading } = useFetch(`/${mediaType}/${id}`);
 
+  const { url } = useSelector((state) => state.home);
+
   // to get the duration of movie or tv show
   const toHoursAndMinutes = (totalMinutes) => {
     const hours = Math.floor(totalMinutes / 60);
@@ -23,7 +25,14 @@ const DetailsBanner = ({ video, crew }) => {
   return (
     <div className="details-banner">
       {!loading ? (
-        <div>Details Content...</div>
+        <>
+          {/*adding details backgound image */}
+          <div className="backdrop-img">
+            <Img src={url.backdrop + data.backdrop_path} />{" "}
+          </div>
+          <div className="opacity-layer"></div>
+          <ContentWrapper></ContentWrapper>
+        </>
       ) : (
         <div className="banner-skeleton">
           <ContentWrapper>

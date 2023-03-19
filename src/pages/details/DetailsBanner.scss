@@ -1,7 +1,7 @@
 @import "../../mixins.scss";
+
 .details-banner {
   width: 100%;
-
   background-color: var(--black);
   padding-top: 100px;
   margin-bottom: 50px;
@@ -176,6 +176,7 @@
     }
   }
 
+  // skeleton loading start
   .banner-skeleton {
     display: flex;
     position: relative;
@@ -185,10 +186,10 @@
       gap: 50px;
       flex-direction: row;
     }
-    .content-wrapper {
-      display: flex;
-      gap: 50px;
-    }
+    //     .content-wrapper {
+    //       display: flex;
+    //       gap: 50px;
+    //     }
 
     .left {
       flex-shrink: 0;
