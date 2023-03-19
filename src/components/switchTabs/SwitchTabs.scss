@@ -1,9 +1,10 @@
+@import "../../mixins.scss";
 .switching-tabs {
   height: 34px;
   background-color: white;
   border-radius: 20px;
   padding: 2px;
-  width: 50%;
+
   .tab-items {
     display: flex;
     align-items: center;

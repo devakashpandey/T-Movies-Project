@@ -1,7 +1,13 @@
+@import "../../../mixins.scss";
+
 .carousel-Section {
   position: relative;
   margin-bottom: 70px;
   margin-left: -10px;
+  @include md {
+    margin-left: 0px;
+  }
+
   & > .content-wrapper {
     display: flex;
     align-items: center;
