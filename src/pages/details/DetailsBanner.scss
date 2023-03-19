@@ -153,11 +153,22 @@
         gap: 25px;
         margin-bottom: 25px;
       }
+      .info-cointainer {
+        @include md {
+          margin-top: -10px;
+        }
+        .runtime {
+          @include md {
+            margin-bottom: 20px;
+          }
+        }
+      }
 
       .info {
         border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         padding: 15px 0;
         display: flex;
+
         .text {
           margin-right: 10px;
           opacity: 0.5;
