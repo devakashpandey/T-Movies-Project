@@ -50,7 +50,7 @@ const DetailsBanner = ({ video, crew }) => {
                 ).format("YYYY")})`}</div>
                 <div className="sub-title">{data.tagline}</div>
                 <div className="row">
-                  <CircleRating rating={data?.vote_average.toFixed(1)} />
+                  <CircleRating rating={data?.vote_average} />
                   <div className="play-btn" onClick={() => {}}>
                     <PlayIcon />
                     <span className="btn-text">Watch Trailer</span>
@@ -59,6 +59,15 @@ const DetailsBanner = ({ video, crew }) => {
                 <div className="overview">
                   <div className="heading">Overview</div>
                   <div className="descrip">{data.overview}</div>
+                </div>
+                <div className="info">Status : &nbsp; {data.status}</div>
+                <div className="info">
+                  Release Date : &nbsp;
+                  {dayjs(data.release_date).format("D MMM, YYYY")}
+                </div>
+                <div className="info">
+                  Run Time : &nbsp;
+                  {toHoursAndMinutes(data.runtime)}
                 </div>
               </div>
             </div>
@@ -69,8 +78,6 @@ const DetailsBanner = ({ video, crew }) => {
           <ContentWrapper>
             <div className="left skeleton"></div>
             <div className="right">
-              <div className="row skeleton"></div>
-              <div className="row skeleton"></div>
               <div className="row skeleton"></div>
               <div className="row skeleton"></div>
               <div className="row skeleton"></div>

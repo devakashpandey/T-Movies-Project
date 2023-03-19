@@ -158,11 +158,6 @@
         border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         padding: 15px 0;
         display: flex;
-        .infoItem {
-          margin-right: 10px;
-          display: flex;
-          flex-flow: row wrap;
-        }
         .text {
           margin-right: 10px;
           opacity: 0.5;
@@ -186,11 +181,10 @@
       gap: 50px;
       flex-direction: row;
     }
-    //     .content-wrapper {
-    //       display: flex;
-    //       gap: 50px;
-    //     }
-
+    .content-wrapper {
+      display: flex;
+      gap: 50px;
+    }
     .left {
       flex-shrink: 0;
       width: 100%;
