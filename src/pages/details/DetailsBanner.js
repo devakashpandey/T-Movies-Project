@@ -43,7 +43,11 @@ const DetailsBanner = ({ video, crew }) => {
                   <Img className="poster-img" src={PosterImg} />
                 )}
               </div>
-              <div className="right"></div>
+              <div className="right">
+                <div className="title">{`${data.name || data.title} (${dayjs(
+                  data.release_date
+                ).format("YYYY")})`}</div>
+              </div>
             </div>
           </ContentWrapper>
         </>
