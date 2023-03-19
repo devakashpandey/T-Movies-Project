@@ -19,8 +19,8 @@ const Footer = () => {
         <div className="info-text">
           Here you explore millions of Movies, TV shows & more. Here you have
           two sections Movies & Tv shows you can also search for the movies or
-          shows which you want. The best thing get here is trending option with
-          Day & Week. Explore & Enjoy
+          shows which you want. The best thing you get here is trending option
+          with Day & Week. Explore & Enjoy
         </div>
 
         <div className="social-icons">

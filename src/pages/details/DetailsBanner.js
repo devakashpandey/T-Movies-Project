@@ -7,7 +7,7 @@ import ContentWrapper from "../../components/contentWrapper/ContentWrapper"; // 
 import useFetch from "../../hooks/useFetch";
 import CircleRating from "../../components/rating/CircleRating";
 import Img from "../../components/lazyLoadImg/Img.js";
-import PosterFallback from "../../assets/no-poster.png";
+import PosterImg from "../../assets/no-poster.png";
 
 const DetailsBanner = ({ video, crew }) => {
   const { mediaType, id } = useParams();
@@ -31,7 +31,21 @@ const DetailsBanner = ({ video, crew }) => {
             <Img src={url.backdrop + data.backdrop_path} />{" "}
           </div>
           <div className="opacity-layer"></div>
-          <ContentWrapper></ContentWrapper>
+          <ContentWrapper>
+            <div className="content">
+              <div className="left">
+                {data.poster_path ? (
+                  <Img
+                    className="poster-img"
+                    src={url.backdrop + data.poster_path}
+                  />
+                ) : (
+                  <Img className="poster-img" src={PosterImg} />
+                )}
+              </div>
+              <div className="right"></div>
+            </div>
+          </ContentWrapper>
         </>
       ) : (
         <div className="banner-skeleton">
