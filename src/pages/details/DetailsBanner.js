@@ -8,6 +8,7 @@ import useFetch from "../../hooks/useFetch";
 import CircleRating from "../../components/rating/CircleRating";
 import Img from "../../components/lazyLoadImg/Img.js";
 import PosterImg from "../../assets/no-poster.png";
+import { PlayIcon } from "../../components/playButton/PlayIcon";
 
 const DetailsBanner = ({ video, crew }) => {
   const { mediaType, id } = useParams();
@@ -47,6 +48,14 @@ const DetailsBanner = ({ video, crew }) => {
                 <div className="title">{`${data.name || data.title} (${dayjs(
                   data.release_date
                 ).format("YYYY")})`}</div>
+                <div className="sub-title">{data.tagline}</div>
+                <div className="row">
+                  <CircleRating rating={data.vote_average.toFixed(1)} />
+                  <div className="play-btn">
+                    <PlayIcon />
+                    <span className="btn-text">Watch Trailer</span>
+                  </div>
+                </div>
               </div>
             </div>
           </ContentWrapper>

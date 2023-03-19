@@ -48,7 +48,7 @@
       flex-direction: row;
     }
     .left {
-      //       flex-shrink: 0;
+      flex-shrink: 0;
       .poster-img {
         width: 100%;
         display: block;
@@ -68,7 +68,7 @@
           line-height: 44px;
         }
       }
-      .subtitle {
+      .sub-title {
         font-size: 16px;
         line-height: 24px;
         margin-bottom: 15px;
@@ -103,7 +103,8 @@
           fill: white;
         }
       }
-      .playbtn {
+      //play button styling with svg animation hover effect
+      .play-btn {
         display: flex;
         align-items: center;
         gap: 20px;
@@ -114,7 +115,7 @@
             width: 80px;
           }
         }
-        .text {
+        .btn-text {
           font-size: 20px;
           transition: all 0.7s ease-in-out;
         }
