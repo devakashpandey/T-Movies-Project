@@ -50,11 +50,15 @@ const DetailsBanner = ({ video, crew }) => {
                 ).format("YYYY")})`}</div>
                 <div className="sub-title">{data.tagline}</div>
                 <div className="row">
-                  <CircleRating rating={data.vote_average.toFixed(1)} />
-                  <div className="play-btn">
+                  <CircleRating rating={data?.vote_average.toFixed(1)} />
+                  <div className="play-btn" onClick={() => {}}>
                     <PlayIcon />
                     <span className="btn-text">Watch Trailer</span>
                   </div>
+                </div>
+                <div className="overview">
+                  <div className="heading">Overview</div>
+                  <div className="descrip">{data.overview}</div>
                 </div>
               </div>
             </div>
