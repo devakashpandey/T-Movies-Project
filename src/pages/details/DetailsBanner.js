@@ -16,6 +16,11 @@ const DetailsBanner = ({ video, crew }) => {
 
   const { url } = useSelector((state) => state.home);
 
+  const director = crew?.filter((f) => f.job === "Director");
+  const writer = crew?.filter(
+    (f) => f.job === "Screenplay" || f.job === "Writer" || f.job === "Story"
+  );
+
   // to get the duration of movie or tv show
   const toHoursAndMinutes = (totalMinutes) => {
     const hours = Math.floor(totalMinutes / 60);
@@ -31,7 +36,7 @@ const DetailsBanner = ({ video, crew }) => {
           <div className="backdrop-img">
             <Img src={url.backdrop + data.backdrop_path} />{" "}
           </div>
-          <div className="opacity-layer"></div>
+          {/* <div className="opacity-layer"></div> */}
           <ContentWrapper>
             <div className="content">
               <div className="left">
@@ -61,14 +66,23 @@ const DetailsBanner = ({ video, crew }) => {
                   <div className="descrip">{data.overview}</div>
                 </div>
                 <div className="info-cointainer">
-                  <div className="info">Status : &nbsp; {data.status}</div>
                   <div className="info">
-                    Release Date : &nbsp;
-                    {dayjs(data.release_date).format("D MMM, YYYY")}
-                  </div>
-                  <div className="info runtime">
-                    Run Time : &nbsp;
-                    {toHoursAndMinutes(data.runtime)}
+                    <div className="info-item">
+                      <span className="text bold">Status : </span>
+                      <span className="text"> {data.status}</span>
+                    </div>
+                    <div className="info-item">
+                      <span className="text bold">Release Date : </span>
+                      <span className="text">
+                        {dayjs(data.release_date).format("D MMM, YYYY")}
+                      </span>
+                    </div>
+                    <div className="info-item">
+                      <span className="text bold">Runtime : </span>
+                      <span className="text">
+                        {toHoursAndMinutes(data.runtime)}
+                      </span>
+                    </div>
                   </div>
                 </div>
               </div>
