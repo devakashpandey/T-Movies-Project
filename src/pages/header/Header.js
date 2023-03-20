@@ -76,7 +76,7 @@ const Header = () => {
       <ContentWrapper className="content-wrapper">
         <div className="logo">
           <img src={logo} alt="logo" />
-          <span className="logo-title">Movix Hub</span>
+          <span className="logo-title">T-Movies</span>
         </div>
         <ul className="menu-items">
           <li className="menu-item" onClick={() => navigationHandler("movie")}>
