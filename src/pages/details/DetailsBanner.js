@@ -85,35 +85,55 @@ const DetailsBanner = ({ video, crew }) => {
                     </div>
                   </div>
                 </div>
-                <div className="directer">
-                  <div className="info">
-                    <span className="text bold">Director : </span>
-                    <span className="text">
-                      {director?.map((d, index) => {
-                        return (
-                          <span className="" key={index}>
-                            {d.name}
-                            {/* for seperate qumas for multiple directore / writer */}
-                            {director.length - 1 !== index && ", "}
-                          </span>
-                        );
-                      })}
-                    </span>
-                  </div>
-                  <div className="info">
-                    <span className="text bold">Writer : </span>
-                    <span className="text">
-                      {writer?.map((d, index) => {
-                        return (
-                          <span className="" key={index}>
-                            {d.name}
-                            {/* for seperate qumas for multiple directore / writer */}
-                            {writer.length - 1 !== index && ", "}
-                          </span>
-                        );
-                      })}
-                    </span>
-                  </div>
+                <div className="directer-writer">
+                  {director?.length > 0 && (
+                    <div className="info">
+                      <span className="text bold">Director : </span>
+                      <span className="text">
+                        {director?.map((d, index) => {
+                          return (
+                            <span className="" key={index}>
+                              {d.name}
+                              {/* for seperate qumas for multiple directore / writer */}
+                              {director?.length - 1 !== index && ", "}
+                            </span>
+                          );
+                        })}
+                      </span>
+                    </div>
+                  )}
+                  {writer?.length > 0 && (
+                    <div className="info">
+                      <span className="text bold">Writer : </span>
+                      <span className="text">
+                        {writer?.map((d, index) => {
+                          return (
+                            <span className="" key={index}>
+                              {d.name}
+                              {/* for seperate qumas for multiple directore / writer */}
+                              {writer?.length - 1 !== index && ", "}
+                            </span>
+                          );
+                        })}
+                      </span>
+                    </div>
+                  )}
+                  {data?.created_by > 0 && (
+                    <div className="info">
+                      <span className="text bold">Creator : </span>
+                      <span className="text">
+                        {data?.created_by?.map((d, index) => {
+                          return (
+                            <span className="" key={index}>
+                              {d.name}
+                              {/* for seperate qumas for multiple directore / writer */}
+                              {writer?.length - 1 !== index && ", "}
+                            </span>
+                          );
+                        })}
+                      </span>
+                    </div>
+                  )}
                 </div>
               </div>
             </div>
