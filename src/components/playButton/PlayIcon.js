@@ -6,8 +6,8 @@ export const PlayIcon = () => {
       xmlnsXlink="http://www.w3.org/1999/xlink"
       x="0px"
       y="0px"
-      width="80px"
-      height="80px"
+      width="65px"
+      height="65px"
       viewBox="0 0 213.7 213.7"
       enableBackground="new 0 0 213.7 213.7"
       xmlSpace="preserve"
@@ -15,7 +15,7 @@ export const PlayIcon = () => {
       <polygon
         className="triangle"
         fill="none"
-        strokeWidth="7"
+        strokeWidth="6"
         strokeLinecap="round"
         strokeLinejoin="round"
         strokeMiterlimit="10"
@@ -24,7 +24,7 @@ export const PlayIcon = () => {
       <circle
         className="circle"
         fill="none"
-        strokeWidth="7"
+        strokeWidth="6"
         strokeLinecap="round"
         strokeLinejoin="round"
         strokeMiterlimit="10"

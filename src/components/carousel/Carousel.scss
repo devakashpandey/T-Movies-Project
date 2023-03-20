@@ -89,14 +89,19 @@
       padding: 0;
     }
     .carousel-item {
-      margin-top: 10px;
+      margin-top: 20px;
       width: 125px;
       cursor: pointer;
+      transition: all 0.3s ease-in-out;
       @include md {
         width: calc(25% - 15px);
       }
       @include lg {
         width: calc(20% - 16px);
+      }
+      &:hover {
+        transform: scale(1.04);
+        opacity: 0.8;
       }
       flex-shrink: 0; // prevent the shrinking of images
       .posters {

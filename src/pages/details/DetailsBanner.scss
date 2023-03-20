@@ -103,14 +103,19 @@
 
       // circle rating default class styling
       .circleRating {
-        max-width: 70px;
-        background-color: var(--black2);
+        max-width: 65px;
+        transition: all 0.2s ease-in-out;
         @include md {
-          max-width: 90px;
+          max-width: 72px;
         }
         .CircularProgressbar-text {
           fill: white;
         }
+      }
+
+      .circleRating:hover {
+        transform: scale(1.1);
+        cursor: pointer;
       }
 
       // play button styling
@@ -126,7 +131,7 @@
           }
         }
         .btn-text {
-          font-size: 20px;
+          font-size: 18px;
           transition: all 0.7s ease-in-out;
         }
         .triangle {

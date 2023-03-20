@@ -15,7 +15,10 @@ const VideoPopup = ({ show, setShow, videoId, setVideoId }) => {
           Close
         </span>
         <ReactPlayer
-          url={`https://www.youtube.com/watch?v=${videoId}`}
+          url={
+            `https://www.youtube.com/watch?v=${videoId}` ||
+            "https://www.youtube.com"
+          }
           controls
           width="100%"
           height="100%"
