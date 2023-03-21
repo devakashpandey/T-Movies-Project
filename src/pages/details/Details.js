@@ -5,7 +5,7 @@ import { useParams } from "react-router-dom";
 import DetailsBanner from "./DetailsBanner";
 import Cast from "./Cast";
 import OfficialVideos from "../../components/officialVideos/OfficialVideos";
-import Similar from "./carousels/Similar";
+import Similar from "./Similar";
 
 const Details = () => {
   const { mediaType, id } = useParams();
