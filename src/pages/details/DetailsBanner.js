@@ -163,9 +163,11 @@ const DetailsBanner = ({ video, crew }) => {
             <div className="right">
               <div className="row skeleton"></div>
               <div className="row skeleton"></div>
+              <div className="row3 skeleton"></div>
               <div className="row skeleton"></div>
               <div className="row skeleton"></div>
               <div className="row skeleton"></div>
+              <div className="row skeleton "></div>
               <div className="row skeleton"></div>
               <div className="row skeleton"></div>
               <div className="row skeleton"></div>
