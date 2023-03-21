@@ -19,12 +19,12 @@
       margin: 0;
       padding: 0;
     }
-    .listItem {
+    .list-item {
       text-align: center;
       color: white;
-      .profileImg {
-        width: 125px;
-        height: 125px;
+      .profile-img {
+        width: 110px;
+        height: 110px;
         border-radius: 50%;
         overflow: hidden;
         margin-bottom: 15px;
@@ -41,13 +41,14 @@
           display: block;
         }
       }
-      .name {
-        font-size: 14px;
+      .cast-name {
+        font-size: 13px;
         line-height: 20px;
         font-weight: 600;
         @include md {
           font-size: 18px;
-          line-height: 24px;
+          line-height: 20px;
+          margin-top: -5px;
         }
       }
       .character {
