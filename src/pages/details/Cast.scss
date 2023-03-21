@@ -15,6 +15,7 @@
     margin-right: -20px;
     margin-left: -20px;
     padding: 0 20px;
+
     @include md {
       margin: 0;
       padding: 0;
@@ -22,16 +23,23 @@
     .list-item {
       text-align: center;
       color: white;
+      margin-top: 10px;
+
       .profile-img {
         width: 110px;
         height: 110px;
         border-radius: 50%;
         overflow: hidden;
         margin-bottom: 15px;
+        transition: all 0.3s ease-in-out;
         @include md {
           width: 175px;
           height: 175px;
           margin-bottom: 25px;
+        }
+        &:hover {
+          transform: scale(1.07);
+          cursor: pointer;
         }
         img {
           width: 100%;

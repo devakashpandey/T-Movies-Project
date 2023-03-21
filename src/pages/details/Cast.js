@@ -33,6 +33,7 @@ const Cast = ({ data, loading }) => {
                     <Img src={imgURL} />
                   </div>
                   <div className="cast-name">{item.name}</div>
+                  <div className="character">{item.character}</div>
                 </div>
               );
             })}
