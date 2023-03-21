@@ -15,7 +15,7 @@ export const PlayIcon = () => {
       <polygon
         className="triangle"
         fill="none"
-        strokeWidth="6"
+        strokeWidth="8"
         strokeLinecap="round"
         strokeLinejoin="round"
         strokeMiterlimit="10"
@@ -24,7 +24,7 @@ export const PlayIcon = () => {
       <circle
         className="circle"
         fill="none"
-        strokeWidth="6"
+        strokeWidth="8"
         strokeLinecap="round"
         strokeLinejoin="round"
         strokeMiterlimit="10"

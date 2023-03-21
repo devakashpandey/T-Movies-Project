@@ -12,7 +12,7 @@ const OfficialVideos = ({ data, loading }) => {
   const loadingSkeleton = () => {
     return (
       <div className="skeleton-item">
-        <div className="thumb skeleton"></div>
+        <div className="thumbnail skeleton"></div>
         <div className="row skeleton"></div>
         <div className="row2 skeleton"></div>
       </div>
@@ -20,27 +20,27 @@ const OfficialVideos = ({ data, loading }) => {
   };
 
   return (
-    <div className="gfhfg">
+    <div className="videos-section">
       <ContentWrapper>
-        <div className="dfghfgh">Official Videos</div>
+        <div className="section-heading">Official Videos</div>
         {!loading ? (
-          <div className="dfghfh">
+          <div className="videos">
             {data?.results?.map((video) => {
               const thumbnail = `https://img.youtube.com/vi/${video.key}/mqdefault.jpg`;
               return (
                 <div
-                  className="dfghfdh"
+                  className="video-item"
                   key={video.id}
                   onClick={() => {
                     setVideoId(video.key);
                     setShow(true);
                   }}
                 >
-                  <div className="dfghfgh">
+                  <div className="video-thumbnail">
                     <Img src={thumbnail} />
                     <PlayIcon />
                   </div>
-                  <div className="dfgh">{video.name}</div>
+                  <div className="video-title">{video.name}</div>
                 </div>
               );
             })}

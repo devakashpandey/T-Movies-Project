@@ -23,19 +23,21 @@
     .video-item {
       width: 150px;
       flex-shrink: 0;
+      margin-top: 10px;
       @include md {
         width: 25%;
       }
       cursor: pointer;
       .video-thumbnail {
         margin-bottom: 15px;
-        position: relative;
+        position: relative; // for showing play btn on top of the thumbnail
         img {
           width: 100%;
           display: block;
           border-radius: 12px;
-          transition: all 0.7s ease-in-out;
+          transition: all 0.3s ease-in-out;
         }
+        // styling of play btn icons
         svg {
           position: absolute;
           top: 50%;
@@ -53,13 +55,13 @@
         }
         .circle {
           stroke: white;
-          stroke-dasharray: 650;
-          stroke-dashoffset: 1300;
           transition: all 0.5s ease-in-out;
         }
+        // hover styling
         &:hover {
           img {
             opacity: 0.5;
+            transform: scale(1.06);
           }
           .triangle {
             stroke-dashoffset: 0;
@@ -77,6 +79,7 @@
         color: white;
         font-size: 14px;
         line-height: 20px;
+        text-align: center;
         @include md {
           font-size: 16px;
           line-height: 24px;
@@ -86,7 +89,6 @@
   }
 
   // video skeleton loading styling
-
   .video-skeleton {
     display: flex;
     gap: 10px;
@@ -105,12 +107,12 @@
       @include md {
         width: 25%;
       }
-      //       .thumb {
-      //         width: 100%;
-      //         aspect-ratio: 16 / 9;
-      //         border-radius: 12px;
-      //         margin-bottom: 10px;
-      //       }
+      .thumbnail {
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        border-radius: 12px;
+        margin-bottom: 10px;
+      }
       .row {
         height: 20px;
         width: 100%;
