@@ -48,6 +48,13 @@ const Carousel = ({ data, loading, endpoint, title }) => {
     <>
       <div className="carousel">
         <ContentWrapper>
+          {title && (
+            <div
+              style={{ color: "white", fontSize: "24px", marginBottom: "20px" }}
+            >
+              {title}
+            </div>
+          )}
           <BsFillArrowLeftCircleFill
             className="left-arrow arrow"
             onClick={() => navigation("left")}
