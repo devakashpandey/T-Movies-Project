@@ -5,6 +5,7 @@ import { useParams } from "react-router-dom";
 import DetailsBanner from "./DetailsBanner";
 import Cast from "./Cast";
 import OfficialVideos from "../../components/officialVideos/OfficialVideos";
+import Similar from "./carousels/Similar";
 
 const Details = () => {
   const { mediaType, id } = useParams();
@@ -18,6 +19,7 @@ const Details = () => {
       <DetailsBanner video={data.results?.[0]} crew={credits?.crew} />
       <Cast data={credits.cast} loading={creditsLoading} />
       <OfficialVideos data={data} loading={loading} />
+      <Similar mediaType={mediaType} id={id} />
     </>
   );
 };

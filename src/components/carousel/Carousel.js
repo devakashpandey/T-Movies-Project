@@ -12,7 +12,7 @@ import Img from "../lazyLoadImg/Img";
 import PosterImg from "../../assets/no-poster.png";
 import CircleRating from "../rating/CircleRating";
 
-const Carousel = ({ data, loading, endpoint }) => {
+const Carousel = ({ data, loading, endpoint, title }) => {
   const carouselSelector = useRef(); // we can select any element by their refrences through this hook
   const navigate = useNavigate();
   const { url } = useSelector((state) => state.home);
