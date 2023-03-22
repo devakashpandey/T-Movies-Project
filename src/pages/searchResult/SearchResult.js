@@ -24,6 +24,20 @@ const SearchResult = () => {
     );
   };
 
+  const fetchNextPage = () => {
+    setLoading(true);
+    fetchDataFromApi(`/search/multi?query=${query}&page=${pageNum}`).then(
+      (res) => {
+        if (data?.results) {
+          setData({ ...data, results: [...data?.results, ...res.results] });
+        } else {
+          setData(res);
+        }
+        setPageNum((prev) => prev + 1);
+      }
+    );
+  };
+
   useEffect(() => {
     fetchInitialData();
   }, [query]);
