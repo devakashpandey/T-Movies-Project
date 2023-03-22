@@ -46,6 +46,7 @@ const SearchResult = () => {
 
   useEffect(() => {
     fetchInitialData();
+    setPageNum(1);
   }, [query]);
 
   return (
@@ -69,7 +70,7 @@ const SearchResult = () => {
                   hasMore={pageNum <= data?.total_pages}
                   loader={<Spinner />}
                 >
-                  {data?.results.map((item, i) => {
+                  {data?.results?.map((item, i) => {
                     if (item.media_type === "person") return; // we done want to show person result after searching
                     return <MovieCard key={i} data={item} />;
                   })}
