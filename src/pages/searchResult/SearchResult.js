@@ -45,7 +45,25 @@ const SearchResult = () => {
 
   return (
     <>
-      <div className="search-result">{loading && <Spinner />}</div>
+      <div className="search-result">
+        {loading ? (
+          <Spinner />
+        ) : (
+          <ContentWrapper>
+            {data?.results?.length > 0 ? (
+              <>
+                <div className="page-title">
+                  {`Search ${
+                    data?.total_results > 1 ? "results" : "result"
+                  } of "${query}" `}
+                </div>
+              </>
+            ) : (
+              <span className="resultNotFound">Sorry, Results Not Found!!</span>
+            )}
+          </ContentWrapper>
+        )}
+      </div>
     </>
   );
 };
