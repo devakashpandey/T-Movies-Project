@@ -52,7 +52,7 @@ const Footer = () => {
           </span>
         </div>
         <div className="copyright">
-          Copyright © 2023 Akash Pandey. All rights reserved.
+          Copyright © 2023 Akash Pandey. All Rights Reserved.
         </div>
       </ContentWrapper>
     </footer>

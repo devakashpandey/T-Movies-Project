@@ -10,7 +10,6 @@ import Img from "../../components/lazyLoadImg/Img.js";
 import PosterImg from "../../assets/no-poster.png";
 import { PlayIcon } from "../../components/playButton/PlayIcon";
 import VideoPopup from "../../components/videoPopup/VideoPopup";
-import Spinner from "../../components/lodingSpinner/Spinner";
 
 const DetailsBanner = ({ video, crew }) => {
   const [show, setShow] = useState(false);
@@ -145,7 +144,6 @@ const DetailsBanner = ({ video, crew }) => {
                       </span>
                     </div>
                   )}
-                  {/* <Spinner /> */}
                 </div>
               </div>
             </div>

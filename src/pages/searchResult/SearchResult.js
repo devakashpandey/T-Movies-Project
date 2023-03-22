@@ -6,6 +6,7 @@ import { fetchDataFromApi } from "../../config/api";
 import ContentWrapper from "../../components/contentWrapper/ContentWrapper";
 import noResult from "../../assets/no-results.png";
 import Spinner from "../../components/lodingSpinner/Spinner";
+import MovieCard from "../../components/movieCard/MovieCard";
 
 const SearchResult = () => {
   const [data, setData] = useState("");
@@ -57,6 +58,18 @@ const SearchResult = () => {
                     data?.total_results > 1 ? "results" : "result"
                   } of "${query}" `}
                 </div>
+                <InfiniteScroll
+                  className="content"
+                  dataLength={data?.results.length || []}
+                  next={fetchNextPage}
+                  hasMore={pageNum <= data?.total_pages}
+                  loader={<Spinner />}
+                >
+                  {data?.results.map((item, i) => {
+                    if (item.media_type === "person") return; // we done want to show person result after searching
+                    return <MovieCard key={i} data={item} fromSearch={true} />;
+                  })}
+                </InfiniteScroll>
               </>
             ) : (
               <span className="resultNotFound">Sorry, Results Not Found!!</span>
