@@ -31,10 +31,14 @@ const SearchResult = () => {
     fetchDataFromApi(`/search/multi?query=${query}&page=${pageNum}`).then(
       (res) => {
         if (data?.results) {
-          setData({ ...data, results: [...data?.results, ...res.results] });
+          setData({
+            ...data,
+            results: [...data?.results, ...res.results],
+          });
         } else {
           setData(res);
         }
+        setLoading(false);
         setPageNum((prev) => prev + 1);
       }
     );
@@ -60,14 +64,14 @@ const SearchResult = () => {
                 </div>
                 <InfiniteScroll
                   className="content"
-                  dataLength={data?.results.length || []}
+                  dataLength={data?.results?.length || []}
                   next={fetchNextPage}
                   hasMore={pageNum <= data?.total_pages}
                   loader={<Spinner />}
                 >
                   {data?.results.map((item, i) => {
                     if (item.media_type === "person") return; // we done want to show person result after searching
-                    return <MovieCard key={i} data={item} fromSearch={true} />;
+                    return <MovieCard key={i} data={item} />;
                   })}
                 </InfiniteScroll>
               </>

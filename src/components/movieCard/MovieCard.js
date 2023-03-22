@@ -7,7 +7,7 @@ import Img from "../lazyLoadImg/Img";
 import CircleRating from "../rating/CircleRating";
 import NoPosterImg from "../../assets/no-poster.png";
 
-const MovieCard = ({ data, fromSearch, mediaType }) => {
+const MovieCard = ({ data, mediaType }) => {
   const { url } = useSelector((state) => state.home);
 
   const navigate = useNavigate();
