@@ -5,6 +5,7 @@ import InfiniteScroll from "react-infinite-scroll-component";
 import { fetchDataFromApi } from "../../config/api";
 import ContentWrapper from "../../components/contentWrapper/ContentWrapper";
 import noResult from "../../assets/no-results.png";
+import Spinner from "../../components/lodingSpinner/Spinner";
 
 const SearchResult = () => {
   const [data, setData] = useState("");
@@ -44,7 +45,7 @@ const SearchResult = () => {
 
   return (
     <>
-      <div className="search-result"></div>
+      <div className="search-result">{loading && <Spinner />}</div>
     </>
   );
 };

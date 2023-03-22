@@ -1,0 +1,7 @@
+.sweet-loading {
+  display: flex;
+  height: 90vh;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
