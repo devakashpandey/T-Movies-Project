@@ -4,7 +4,7 @@ import PacmanLoader from "react-spinners/PacmanLoader";
 
 const Spinner = () => {
   return (
-    <div className="sweet-loading">
+    <div className="spinner">
       <PacmanLoader color="white" size={40} />
     </div>
   );
