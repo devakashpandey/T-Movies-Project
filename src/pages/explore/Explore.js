@@ -3,7 +3,7 @@ import "./Explore.scss";
 import { useParams } from "react-router-dom";
 import InfiniteScroll from "react-infinite-scroll-component";
 import Select from "react-select";
-import useFetch from "../../hooks/useFetch";
+import useFetch from "../../hooks/useFetch"; // this is used to fetch the "genres"
 import { fetchDataFromApi } from "../../config/api";
 import ContentWrapper from "../../components/contentWrapper/ContentWrapper";
 import MovieCard from "../../components/movieCard/MovieCard";
@@ -12,7 +12,7 @@ import Spinner from "../../components/lodingSpinner/Spinner";
 let filters = {};
 
 const sortbyData = [
-  { value: "popularity.desc", label: "Popularity Descending" },
+  { value: "popularity.desc", label: "Popularity Descending" }, // value is come from sort_by QUERY (avail in discovver API)
   { value: "popularity.asc", label: "Popularity Ascending" },
   { value: "vote_average.desc", label: "Rating Descending" },
   { value: "vote_average.asc", label: "Rating Ascending" },
@@ -32,10 +32,11 @@ const Explore = () => {
   const [sortby, setSortby] = useState(null);
   const { mediaType } = useParams();
 
-  const { data: genresData } = useFetch(`/genre/${mediaType}/list`);
+  const { data: genresData } = useFetch(`/genre/${mediaType}/list`); // fetching genres
 
   const fetchInitialData = () => {
     setLoading(true);
+    // filters indicate to "params" which is define in api.js
     fetchDataFromApi(`/discover/${mediaType}`, filters).then((res) => {
       setData(res);
       setPageNum((prev) => prev + 1);
@@ -72,19 +73,20 @@ const Explore = () => {
     if (action.name === "sortby") {
       setSortby(selectedItems);
       if (action.action !== "clear") {
-        filters.sort_by = selectedItems.value;
+        filters.sort_by = selectedItems.value; // assign a key name "sort_by" (which is default from discomer API) in filters
       } else {
-        delete filters.sort_by;
+        delete filters.sort_by; // for clearing the select box
       }
     }
 
     if (action.name === "genres") {
+      setGenre(selectedItems);
       if (action.action !== "clear") {
-        let genreId = selectedItems.map((g) => g.id);
-        genreId = JSON.stringify(genreId).slice(1, -1);
-        filters.with_genres = genreId;
+        let genreId = selectedItems.map((g) => g.id); // get the all genres id [2,3,4,7]
+        genreId = JSON.stringify(genreId).slice(1, -1); // converting array to string "[2,3,4,7]" then alice it to remove bracket "2,3,4,7"
+        filters.with_genres = genreId; // assign a key name "with_genres" (which is default from discover API) in filters
       } else {
-        delete filters.with_genres;
+        delete filters.with_genres; // for deleting all genres
       }
     }
 
@@ -99,6 +101,7 @@ const Explore = () => {
           <div className="title">
             {mediaType === "tv" ? "Explore TV Shows" : "Explore Movies"}
           </div>
+          {/* ====== filter and select option start ======= */}
           <div className="filters">
             <Select
               isMulti
@@ -109,8 +112,8 @@ const Explore = () => {
               getOptionLabel={(option) => option.name}
               getOptionValue={(option) => option.id}
               onChange={onChange}
-              placeholder="Select genres"
-              className="react-select-container genresDD"
+              placeholder="Select Category"
+              className="react-select-container category"
               classNamePrefix="react-select"
             />
             <Select
@@ -120,10 +123,11 @@ const Explore = () => {
               onChange={onChange}
               isClearable={true}
               placeholder="Sort by"
-              className="react-select-container sortbyDD"
+              className="react-select-container sortby"
               classNamePrefix="react-select"
             />
           </div>
+          {/* ====== filter and select option end ======= */}
         </div>
         {loading ? (
           <Spinner />

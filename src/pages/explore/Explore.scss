@@ -7,7 +7,7 @@
     font-size: 24px;
     color: var(--black-light);
   }
-  .pageHeader {
+  .page-header {
     display: flex;
     justify-content: space-between;
     margin-bottom: 25px;
@@ -16,15 +16,14 @@
       flex-direction: row;
     }
   }
-  .pageTitle {
+  .title {
     font-size: 24px;
     line-height: 34px;
     color: white;
     margin-bottom: 20px;
-    @include md {
-      margin-bottom: 0;
-    }
   }
+
+  //  filter and select class styling
   .filters {
     display: flex;
     gap: 10px;
@@ -33,16 +32,12 @@
       flex-direction: row;
     }
     .react-select-container {
-      &.genresDD {
-        width: 100%;
+      &.category {
         @include md {
-          max-width: 500px;
-          min-width: 250px;
+          width: 210px;
         }
       }
-      &.sortbyDD {
-        width: 100%;
-        flex-shrink: 0;
+      &.sortby {
         @include md {
           width: 250px;
         }
@@ -86,6 +81,7 @@
       }
     }
   }
+
   .content {
     display: flex;
     flex-flow: row wrap;
