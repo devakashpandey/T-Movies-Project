@@ -1,0 +1,32 @@
+.pageNotFound {
+  height: 700px;
+  padding-top: 200px;
+
+  .content-wrapper {
+    text-align: center;
+    color: var(--black-light);
+    display: flex;
+    flex-direction: column;
+    .big-text {
+      font-size: 150px;
+      font-weight: 700;
+    }
+    .pnf {
+      font-size: 44px;
+    }
+    .goHome-btn {
+      margin: auto;
+      padding: 10px 20px;
+      border-radius: 20px;
+      outline: none;
+      border: none;
+      cursor: pointer;
+      background: var(--black-light);
+      font-size: 15px;
+
+      &:hover {
+        background: var(--black-lighter);
+      }
+    }
+  }
+}
