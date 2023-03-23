@@ -34,7 +34,7 @@
     .react-select-container {
       &.category {
         @include md {
-          width: 210px;
+          width: 250px;
         }
       }
       &.sortby {
@@ -73,12 +73,18 @@
             }
           }
         }
+        &:hover {
+          cursor: pointer;
+        }
       }
       .react-select__menu {
         top: 40px;
         margin: 0;
         padding: 0;
       }
+    }
+    &:hover {
+      cursor: pointer;
     }
   }
 
