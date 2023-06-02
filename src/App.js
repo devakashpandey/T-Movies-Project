@@ -1,9 +1,8 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import "./App.css";
-import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { fetchDataFromApi } from "./config/api";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import { getApiConfiguration } from "./redux/slices/HomeSlice";
 import { Routes, Route } from "react-router-dom";
 import Home from "./pages/home/Home";
@@ -16,8 +15,6 @@ import Footer from "./pages/footer/Footer";
 
 function App() {
   const dispatch = useDispatch();
-
-  const { url } = useSelector((state) => state.home);
 
   const fetchApiConfig = () => {
     fetchDataFromApi("/configuration").then((res) => {
@@ -32,7 +29,7 @@ function App() {
 
   useEffect(() => {
     fetchApiConfig();
-  }, []);
+  });
 
   return (
     <>
@@ -45,8 +42,6 @@ function App() {
         <Route path="*" element={<PageNotFound />} />
       </Routes>
       <Footer />
-
-      <ToastContainer />
     </>
   );
 }

@@ -1,6 +1,7 @@
 import axios from "axios";
 import { toast } from "react-toastify";
 
+// API request link
 const BASE_URL = "https://api.themoviedb.org/3";
 
 const TMBD_TOKEN =
