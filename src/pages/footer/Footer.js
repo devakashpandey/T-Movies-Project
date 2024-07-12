@@ -1,11 +1,19 @@
 import React from "react";
 import "./Footer.scss";
-import { FaInstagram, FaTwitter, FaLinkedin } from "react-icons/fa";
-import { FiMail } from "react-icons/fi";
+import {
+  FaInstagram,
+  FaTwitter,
+  FaLinkedin,
+  FaYoutube,
+  FaGithub,
+} from "react-icons/fa";
 
 import ContentWrapper from "../../components/contentWrapper/ContentWrapper"; // fro centering the all content
 
 const Footer = () => {
+  const currYear = new Date();
+  const year = currYear.getFullYear();
+
   return (
     <footer className="footer">
       <ContentWrapper>
@@ -25,13 +33,13 @@ const Footer = () => {
 
         <div className="social-icons">
           <span className="icon">
-            <a href="mailto:developerakky@gmail,com" target="_mail">
-              <FiMail />
+            <a href="https://www.github.com/devakashpandey" target="_github">
+              <FaGithub />
             </a>
           </span>
           <span className="icon">
             <a
-              href="https://www.instagram.com/codingwithakash"
+              href="https://www.instagram.com/firstclasscode"
               target="_instagram"
             >
               <FaInstagram />
@@ -50,9 +58,14 @@ const Footer = () => {
               <FaLinkedin />
             </a>
           </span>
+          <span className="icon">
+            <a href="https://www.youtube.com/@firstclasscode" target="_youtube">
+              <FaYoutube />
+            </a>
+          </span>
         </div>
         <div className="copyright">
-          Copyright © 2023 Akash Pandey. All Rights Reserved.
+          Copyright © {year} Akash Pandey. All Rights Reserved.
         </div>
       </ContentWrapper>
     </footer>
