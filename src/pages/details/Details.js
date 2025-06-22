@@ -16,8 +16,8 @@ const Details = () => {
 
   return (
     <>
-      <DetailsBanner video={data.results?.[0]} crew={credits?.crew} />
-      <Cast data={credits.cast} loading={creditsLoading} />
+      <DetailsBanner video={data?.results?.[0]} crew={credits?.crew} />
+      <Cast data={credits?.cast} loading={creditsLoading} />
       <OfficialVideos data={data} loading={loading} />
       <Similar mediaType={mediaType} id={id} />
     </>

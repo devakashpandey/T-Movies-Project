@@ -38,26 +38,26 @@ const DetailsBanner = ({ video, crew }) => {
         <>
           {/*adding details backgound image */}
           <div className="backdrop-img">
-            <Img src={url.backdrop + data.backdrop_path} />{" "}
+            <Img src={url.backdrop + data?.backdrop_path} />{" "}
           </div>
           <div className="opacity-layer"></div>
           <ContentWrapper>
             <div className="content">
               <div className="left">
-                {data.poster_path ? (
+                {data?.poster_path ? (
                   <Img
                     className="poster-img"
-                    src={url.backdrop + data.poster_path}
+                    src={url.backdrop + data?.poster_path}
                   />
                 ) : (
                   <Img className="poster-img" src={PosterImg} />
                 )}
               </div>
               <div className="right">
-                <div className="title">{`${data.name || data.title} (${dayjs(
-                  data.release_date
+                <div className="title">{`${data?.name || data?.title} (${dayjs(
+                  data?.release_date
                 ).format("YYYY")})`}</div>
-                <div className="sub-title">{data.tagline}</div>
+                <div className="sub-title">{data?.tagline}</div>
                 <div className="row">
                   <CircleRating rating={data?.vote_average?.toFixed(1)} />
                   <div
@@ -73,24 +73,24 @@ const DetailsBanner = ({ video, crew }) => {
                 </div>
                 <div className="overview">
                   <div className="heading">Overview</div>
-                  <div className="descrip">{data.overview}</div>
+                  <div className="descrip">{data?.overview}</div>
                 </div>
                 <div className="info-cointainer">
                   <div className="info">
                     <div className="info-item">
                       <span className="text bold">Status : </span>
-                      <span className="text"> {data.status}</span>
+                      <span className="text"> {data?.status}</span>
                     </div>
                     <div className="info-item">
                       <span className="text bold">Release Date : </span>
                       <span className="text">
-                        {dayjs(data.release_date).format("D MMM, YYYY")}
+                        {dayjs(data?.release_date).format("D MMM, YYYY")}
                       </span>
                     </div>
                     <div className="info-item">
                       <span className="text bold">Runtime : </span>
                       <span className="text">
-                        {toHoursAndMinutes(data.runtime)}
+                        {toHoursAndMinutes(data?.runtime)}
                       </span>
                     </div>
                   </div>
