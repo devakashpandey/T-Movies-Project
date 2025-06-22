@@ -3,7 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 export const homeSlice = createSlice({
   name: "home",
   initialState: {
-    url: {}, // url of movies's & poster pic
+    url: [], // url of movies's & poster pic
   },
 
   reducers: {

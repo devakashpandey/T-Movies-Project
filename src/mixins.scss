@@ -3,25 +3,29 @@
 
 @mixin sm {
   // 640 ya 640px se upr
-  @media only screen and (min-width: 640px) {   // for small devices like phone
+  @media only screen and (min-width: 640px) {
+    // for small devices like phone
     @content;
   }
 }
 
 @mixin md {
-  @media only screen and (min-width: 768px) { // for meduium devices like tab
+  @media only screen and (min-width: 768px) {
+    // for meduium devices like tab
     @content;
   }
 }
 
 @mixin lg {
-  @media only screen and (min-width: 1024px) {  // for large screen like laptop
+  @media only screen and (min-width: 1024px) {
+    // for large screen like laptop
     @content;
   }
 }
 
 @mixin xl {
-  @media only screen and (min-width: 1280px) { // for extra large screen like big tv screen
+  @media only screen and (min-width: 1280px) {
+    // for extra large screen like big tv screen
     @content;
   }
 }

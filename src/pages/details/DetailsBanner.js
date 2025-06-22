@@ -6,7 +6,7 @@ import dayjs from "dayjs";
 import ContentWrapper from "../../components/contentWrapper/ContentWrapper"; // fro centering the all content
 import useFetch from "../../hooks/useFetch";
 import CircleRating from "../../components/rating/CircleRating";
-import Img from "../../components/lazyLoadImg/Img.js";
+import Img from "../../components/lazyLoadImg/img";
 import PosterImg from "../../assets/no-poster.png";
 import { PlayIcon } from "../../components/playButton/PlayIcon";
 import VideoPopup from "../../components/videoPopup/VideoPopup";

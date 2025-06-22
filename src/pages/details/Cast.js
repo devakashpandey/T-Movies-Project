@@ -2,7 +2,7 @@ import React from "react";
 import "./Cast.scss";
 import { useSelector } from "react-redux";
 import ContentWrapper from "../../components/contentWrapper/ContentWrapper";
-import Img from "../../components/lazyLoadImg/Img";
+import Img from "../../components/lazyLoadImg/img";
 import avatar from "../../assets/avatar.png";
 
 const Cast = ({ data, loading }) => {

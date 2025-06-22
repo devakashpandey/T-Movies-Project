@@ -1,27 +1,28 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { fetchDataFromApi } from "../config/api";
 
-// custom hook for fetching api, handle loading & error
-
 const useFetch = (url) => {
-  const [data, setData] = useState("");
+  const [data, setData] = useState(null);
   const [loading, setLoading] = useState("");
-  const [error, setError] = useState("");
+  const [error, setError] = useState(null);
+
+  const getData = async () => {
+    setLoading("Loading...");
+    setData(null);
+    setError(null);
+
+    try {
+      const res = await fetchDataFromApi(url);
+      setData(res);
+    } catch (err) {
+      setError(err.message || "Something went wrong");
+    } finally {
+      setLoading("");
+    }
+  };
 
   useEffect(() => {
-    setLoading("Loding...");
-    setData("");
-    setError("");
-
-    fetchDataFromApi(url)
-      .then((res) => {
-        setLoading("");
-        setData(res);
-      })
-      .catch((err) => {
-        setLoading("");
-        setError(err);
-      });
+    getData();
   }, [url]);
 
   return { data, loading, error };

@@ -3,7 +3,7 @@ import "./MovieCard.scss";
 import dayjs from "dayjs";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
-import Img from "../lazyLoadImg/Img";
+import Img from "../lazyLoadImg/img";
 import CircleRating from "../rating/CircleRating";
 import NoPosterImg from "../../assets/no-poster.png";
 

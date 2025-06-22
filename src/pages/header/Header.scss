@@ -31,12 +31,12 @@
   }
 
   .logo > img {
-    height: 25px;
-    width: 25px;
+    height: 20px;
+    width: 20px;
     margin-top: -3px;
     @include md {
-      height: 30px;
-      width: 30px;
+      height: 25px;
+      width: 25px;
     }
   }
 

@@ -8,7 +8,7 @@ import {
   FaGithub,
 } from "react-icons/fa";
 
-import ContentWrapper from "../../components/contentWrapper/ContentWrapper"; // fro centering the all content
+import ContentWrapper from "../../components/contentWrapper/ContentWrapper";
 
 const Footer = () => {
   const currYear = new Date();

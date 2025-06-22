@@ -8,7 +8,7 @@ import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import dayjs from "dayjs"; // formating the date
 import ContentWrapper from "../contentWrapper/ContentWrapper";
-import Img from "../lazyLoadImg/Img";
+import Img from "../lazyLoadImg/img";
 import PosterImg from "../../assets/no-poster.png";
 import CircleRating from "../rating/CircleRating";
 
